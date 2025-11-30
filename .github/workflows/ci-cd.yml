@@ -25,4 +25,4 @@ jobs:
         run: mvn -B verify
 
       - name: Run unit tests
-        run: mvn test -Dtest=unit
+        run: mvn test -DincludeTags=unit
