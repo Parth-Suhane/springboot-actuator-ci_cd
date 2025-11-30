@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: prodapp
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "beans,health,info,metrics,loggers,threaddump,httpexchanges"
+  endpoint:
+    health:
+      show-components: "ALWAYS"
+      show-details: "ALWAYS"
+      probes-enabled: true
+    shutdown:
+      enabled: true
+  info:
+    env:
+      enabled: true
+  server:
+    port: 8081   # separate port for actuator is common in prod
+
+info:
+  app:
+    name: prodapp
+    description: "Production-ready Spring Boot app"
+    owner: "Platform Team"
+
+logging:
+  level:
+    root: INFO
+    com.example.prodapp: DEBUG
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+logging:
+  level:
+    root: DEBUG
