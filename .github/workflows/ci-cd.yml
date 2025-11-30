@@ -25,4 +25,4 @@ jobs:
         run: mvn -B verify
 
       - name: Run unit tests
-        run: mvn -Dgroups=unit test
+        run: mvn test -Dtest=unit
