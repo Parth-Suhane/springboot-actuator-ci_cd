@@ -3,12 +3,13 @@ package com.example.prodapp.service;
 import com.example.prodapp.model.User;
 import com.example.prodapp.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+@Tag("unit")
 class UserServiceTest {
 
     private UserRepository repo;

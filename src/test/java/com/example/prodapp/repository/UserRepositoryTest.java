@@ -2,10 +2,12 @@ package com.example.prodapp.repository;
 
 import com.example.prodapp.model.User;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Tag("unit")
 class UserRepositoryTest {
 
     private UserRepository repo;

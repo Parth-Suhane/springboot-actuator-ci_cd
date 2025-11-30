@@ -2,6 +2,7 @@ package com.example.prodapp.controller;
 
 import com.example.prodapp.model.User;
 import com.example.prodapp.service.UserService;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(UserController.class)
+@Tag("unit")
 class UserControllerTest {
 
     @Autowired
