@@ -1,6 +1,14 @@
 spring:
   application:
     name: prodapp
+  boot:
+    admin:
+      client:
+        instance:
+          prefer-ip: true
+          service-url: "http://localhost:8080"
+          management-url: "http://localhost:8081/actuator"
+        url: "http://localhost:9090"
 
 server:
   port: 8080
@@ -9,13 +17,16 @@ management:
   endpoints:
     web:
       exposure:
-        include: "beans,health,info,metrics,loggers,threaddump,httpexchanges"
+        include: "*"
+        # include: "beans,health,info,metrics,loggers,threaddump,httpexchanges"
   endpoint:
     health:
       show-components: "ALWAYS"
       show-details: "ALWAYS"
       probes-enabled: true
     shutdown:
+      enabled: true
+    logfile:
       enabled: true
   info:
     env:
@@ -33,13 +44,5 @@ logging:
   level:
     root: INFO
     com.example.prodapp: DEBUG
-
----
-spring:
-  config:
-    activate:
-      on-profile: dev
-
-logging:
-  level:
-    root: DEBUG
+  file:
+    name: logs/app.log
